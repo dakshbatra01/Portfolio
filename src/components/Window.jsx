@@ -2,11 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 
 export default function Window({ title, children, onClose, onMinimize, onFocus, zIndex = 50, initialSize = { width: 700, height: 450 }, initialPos = { x: 100, y: 100 } }) {
   const [isDragging, setIsDragging] = useState(false);
+  const [isResizing, setIsResizing] = useState(false);
   const [pos, setPos] = useState(initialPos);
+  const [size, setSize] = useState(initialSize);
   const [isMaximized, setIsMaximized] = useState(false);
   
   const windowRef = useRef(null);
   const dragRef = useRef({ startX: 0, startY: 0, initialX: 0, initialY: 0 });
+  const resizeRef = useRef({ startX: 0, startY: 0, initialWidth: 0, initialHeight: 0 });
 
   const handleMouseDown = (e) => {
     onFocus?.();
@@ -20,22 +23,44 @@ export default function Window({ title, children, onClose, onMinimize, onFocus, 
     };
   };
 
+  const handleResizeMouseDown = (e) => {
+    e.stopPropagation();
+    onFocus?.();
+    if (isMaximized) return;
+    setIsResizing(true);
+    resizeRef.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      initialWidth: size.width,
+      initialHeight: size.height
+    };
+  };
+
   useEffect(() => {
     const handleMouseMove = (e) => {
-      if (!isDragging) return;
-      const dx = e.clientX - dragRef.current.startX;
-      const dy = e.clientY - dragRef.current.startY;
-      setPos({
-        x: dragRef.current.initialX + dx,
-        y: Math.max(0, dragRef.current.initialY + dy)
-      });
+      if (isDragging) {
+        const dx = e.clientX - dragRef.current.startX;
+        const dy = e.clientY - dragRef.current.startY;
+        setPos({
+          x: dragRef.current.initialX + dx,
+          y: Math.max(0, dragRef.current.initialY + dy)
+        });
+      } else if (isResizing) {
+        const dx = e.clientX - resizeRef.current.startX;
+        const dy = e.clientY - resizeRef.current.startY;
+        setSize({
+          width: Math.max(300, resizeRef.current.initialWidth + dx),
+          height: Math.max(200, resizeRef.current.initialHeight + dy)
+        });
+      }
     };
 
     const handleMouseUp = () => {
       setIsDragging(false);
+      setIsResizing(false);
     };
 
-    if (isDragging) {
+    if (isDragging || isResizing) {
       window.addEventListener('mousemove', handleMouseMove);
       window.addEventListener('mouseup', handleMouseUp);
     }
@@ -43,7 +68,7 @@ export default function Window({ title, children, onClose, onMinimize, onFocus, 
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging]);
+  }, [isDragging, isResizing, size]);
 
   const windowStyle = isMaximized ? {
     top: 28,
@@ -55,8 +80,8 @@ export default function Window({ title, children, onClose, onMinimize, onFocus, 
   } : {
     top: pos.y,
     left: pos.x,
-    width: initialSize.width,
-    height: initialSize.height,
+    width: size.width,
+    height: size.height,
     zIndex: zIndex,
     borderRadius: '10px',
   };
@@ -112,6 +137,23 @@ export default function Window({ title, children, onClose, onMinimize, onFocus, 
       <div style={{ flex: 1, overflow: 'auto', backgroundColor: 'var(--window-bg)', position: 'relative' }}>
         {children}
       </div>
+
+      {/* Resize Handle */}
+      {!isMaximized && (
+        <div 
+          onMouseDown={handleResizeMouseDown}
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            width: '15px',
+            height: '15px',
+            cursor: 'nwse-resize',
+            zIndex: 10,
+            background: 'linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.2) 50%)'
+          }}
+        />
+      )}
     </div>
   );
 }

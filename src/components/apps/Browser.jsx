@@ -3,17 +3,18 @@ import { Search, Home, ChevronLeft, ChevronRight, RotateCw, Code, Globe, Externa
 
 const projectsData = [
   { id: 'videxa', name: 'Videxa', description: 'AI-powered video intelligence platform combining transcription, semantic search, and contextual chat.', tech: 'Next.js, TypeScript, MongoDB, FAISS, Python, FastAPI', url: null, githubUrl: 'https://github.com/dakshbatra01/Videxa', color: '#ef4444' },
-  { id: 'mentorconnect', name: 'MentorConnect', description: 'Full-stack student-mentor matching and learning platform with JWT authentication, scheduling, and analytics.', tech: 'React, Node.js, Express, MongoDB, TailwindCSS', url: null, githubUrl: 'https://github.com/dakshbatra01/MentorConnect', color: '#3b82f6' },
-  { id: 'whatif', name: 'What-If Engine', description: 'Interactive IPL cricket simulation and ball-by-ball scenario analytics engine.', tech: 'Next.js, FastAPI, Python, Pandas, NumPy, TailwindCSS', url: null, githubUrl: 'https://github.com/dakshbatra01/What-If', color: '#f59e0b' },
+  { id: 'mentorconnect', name: 'MentorConnect', description: 'Full-stack student-mentor matching and learning platform with JWT authentication, scheduling, and analytics.', tech: 'React, Node.js, Express, MongoDB, TailwindCSS', url: 'https://mentor-connect-azure.vercel.app', githubUrl: 'https://github.com/dakshbatra01/MentorConnect', color: '#3b82f6' },
+  { id: 'whatif', name: 'What-If Engine', description: 'Interactive IPL cricket simulation and ball-by-ball scenario analytics engine.', tech: 'Next.js, FastAPI, Python, Pandas, NumPy, TailwindCSS', url: 'https://counterplay-what-if-simulator.vercel.app/', githubUrl: 'https://github.com/dakshbatra01/What-If', color: '#f59e0b' },
   { id: 'sentivox', name: 'SentiVox', description: 'Speech sentiment analysis platform and API.', tech: 'TypeScript, React, FastAPI, Python', url: null, githubUrl: 'https://github.com/dakshbatra01/SentiVox', color: '#10b981' },
-  { id: 'poker', name: 'Poker', description: 'A web-based simulator and interactive client for playing Poker.', tech: 'HTML5, CSS3, JavaScript', url: null, githubUrl: 'https://github.com/dakshbatra01/Poker', color: '#a855f7' },
-  { id: 'dvacapstone', name: 'DVA Capstone G2', description: 'Data visualization and analytics capstone project focused on interactive dashboard creation.', tech: 'Python, Jupyter Notebook, Pandas, NumPy', url: null, githubUrl: 'https://github.com/dakshbatra01/DVA_Capstone_G2', color: '#8b5cf6' },
-  { id: 'finshield', name: 'FinShield', description: 'Financial risk and credit fraud analysis/prediction engine using machine learning.', tech: 'Python, Jupyter Notebook, Machine Learning, Pandas', url: null, githubUrl: 'https://github.com/dakshbatra01/SectionD_G1_FinShield', color: '#ec4899' },
-  { id: 'houseprice', name: 'House Price Predictor', description: 'Machine learning regression models predicting housing prices from structural features.', tech: 'Python, Jupyter Notebook, Scikit-Learn, Pandas', url: null, githubUrl: 'https://github.com/shourya2006/HousePricePredictor', color: '#06b6d4' },
-  { id: 'hrattrition', name: 'HR Attrition Analysis', description: 'Data-driven analysis of employee turnover factors using ML algorithms.', tech: 'Python, Machine Learning, Data Analytics', url: null, githubUrl: 'https://github.com/dakshbatra01/HR_Attrition_Analysis', color: '#f472b6' },
-  { id: 'netflixdata', name: 'Netflix Data Analysis', description: 'Exploratory data analysis on Netflix titles, genres, and trend correlations.', tech: 'Python, Pandas, NumPy, Matplotlib', url: null, githubUrl: 'https://github.com/dakshbatra01/Netflix_Data_Analysis', color: '#f97316' },
-  { id: 'tripwallet', name: 'TripWallet Re-Design', description: 'A redesigned, intuitive expense-tracking application for groups and trips.', tech: 'JavaScript, HTML5, CSS3', url: null, githubUrl: 'https://github.com/shourya2006/TripWallet-ReDesign', color: '#14b8a6' },
-  { id: 'dvaportfolio', name: 'DVA Portfolio', description: 'Data visualization and analysis showcase containing laboratory works and visualization reports.', tech: 'HTML5, CSS3, JavaScript', url: null, githubUrl: 'https://github.com/dakshbatra01/DVA_Portfolio', color: '#6366f1' }
+  { id: 'poker', name: 'Poker', description: 'A web-based simulator and interactive client for playing Poker.', tech: 'HTML5, CSS3, JavaScript', url: 'https://poker-classic.vercel.app/', githubUrl: 'https://github.com/dakshbatra01/Poker', color: '#a855f7' },
+  { id: 'dvacapstone', name: 'DVA Capstone G2', description: 'Data visualization and analytics capstone project focused on interactive dashboard creation.', tech: 'Python, Jupyter Notebook, Pandas, NumPy', url: 'https://docs.google.com/spreadsheets/d/1rVLSdpjKbZ0BUDh4EBQZNY0JMBeePXd155MaRmW5qqY/edit?usp=sharing', githubUrl: 'https://github.com/dakshbatra01/DVA_Capstone_G2', color: '#8b5cf6' },
+  { id: 'finshield', name: 'FinShield', description: 'Financial risk and credit fraud analysis/prediction engine using machine learning.', tech: 'Python, Jupyter Notebook, Machine Learning, Pandas', url: 'https://public.tableau.com/app/profile/daksh.batra/viz/shared/4SBGTH5PQ', githubUrl: 'https://github.com/dakshbatra01/SectionD_G1_FinShield', color: '#ec4899' },
+  { id: 'houseprice', name: 'House Price Predictor', description: 'Machine learning regression models predicting housing prices from structural features.', tech: 'Python, Jupyter Notebook, Scikit-Learn, Pandas', url: 'https://housepricepredictorji.streamlit.app/', githubUrl: 'https://github.com/shourya2006/HousePricePredictor', color: '#06b6d4' },
+  { id: 'hrattrition', name: 'HR Attrition Analysis', description: 'Data-driven analysis of employee turnover factors using ML algorithms.', tech: 'Python, Machine Learning, Data Analytics', url: 'https://public.tableau.com/app/profile/daksh.batra/viz/shared/S3NM52SZS', githubUrl: 'https://github.com/dakshbatra01/HR_Attrition_Analysis', color: '#f472b6' },
+  { id: 'netflixdata', name: 'Netflix Data Analysis', description: 'Exploratory data analysis on Netflix titles, genres, and trend correlations.', tech: 'Python, Pandas, NumPy, Matplotlib', url: 'https://public.tableau.com/app/profile/daksh.batra/viz/NetflixProject-TableauDashboard_17772865054370/Netflix', githubUrl: 'https://github.com/dakshbatra01/Netflix_Data_Analysis', color: '#f97316' },
+  { id: 'tripwallet', name: 'TripWallet Re-Design', description: 'A redesigned, intuitive expense-tracking application for groups and trips.', tech: 'JavaScript, HTML5, CSS3', url: 'https://trip-wallet-eosin.vercel.app', githubUrl: 'https://github.com/shourya2006/TripWallet-ReDesign', color: '#14b8a6' },
+  { id: 'dvaportfolio', name: 'DVA Portfolio', description: 'Data visualization and analysis showcase containing laboratory works and visualization reports.', tech: 'HTML5, CSS3, JavaScript', url: 'https://dva-portfolio-kappa.vercel.app', githubUrl: 'https://github.com/dakshbatra01/DVA_Portfolio', color: '#6366f1' },
+  { id: 'infixagent', name: 'Infix Agent', description: 'Agentic AI Application and Dashboard.', tech: 'Next.js, TailwindCSS', url: 'https://infix-agent-el2h-8r7d2gs2q-dbs-projects-677e8f00.vercel.app/', githubUrl: null, color: '#34d399' }
 ];
 
 export default function Browser() {
@@ -62,15 +63,14 @@ export default function Browser() {
   };
 
   const renderHome = () => (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', background: 'radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.15) 0%, #0a0f1e 70%)', color: '#f8fafc', padding: '20px', overflowY: 'auto' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', height: '100%', background: 'radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.15) 0%, #0a0f1e 70%)', color: '#f8fafc', padding: '60px 20px 40px', overflowY: 'auto' }}>
       
       {/* Logo */}
-      <div style={{ position: 'relative', marginBottom: '12px' }}>
-        <Sparkles size={18} color="#f59e0b" style={{ position: 'absolute', top: -8, right: -14, animation: 'pulse 2s infinite' }} />
-        <Globe size={56} color="#60a5fa" strokeWidth={1.2} />
+      <div style={{ marginBottom: '16px' }}>
+        <Globe size={56} color="#3b82f6" strokeWidth={1.5} />
       </div>
-      <h1 style={{ fontSize: '28px', marginBottom: '6px', fontWeight: '700', background: 'linear-gradient(135deg, #60a5fa, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Daksh Search</h1>
-      <p style={{ color: '#64748b', fontSize: '13px', marginBottom: '28px' }}>Explore my projects and creations</p>
+      <h1 style={{ fontSize: '28px', marginBottom: '6px', fontWeight: '600', color: '#f8fafc', letterSpacing: '-0.5px' }}>Daksh Search</h1>
+      <p style={{ color: '#94a3b8', fontSize: '14px', marginBottom: '32px' }}>Explore my projects and creations</p>
       
       {/* Search bar */}
       <form onSubmit={handleSearchSubmit} style={{ width: '100%', maxWidth: '480px', position: 'relative' }}>
@@ -145,17 +145,43 @@ export default function Browser() {
     if (!activeSite) return null;
     if (activeSite.url) {
       return (
-        <iframe 
-          src={activeSite.url} 
-          style={{ width: '100%', height: '100%', border: 'none', backgroundColor: '#fff' }}
-          title={activeSite.name}
-        />
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <iframe 
+            src={activeSite.url} 
+            style={{ flex: 1, width: '100%', border: 'none', backgroundColor: '#fff' }}
+            title={activeSite.name}
+          />
+          {activeSite.githubUrl && (
+            <div style={{ padding: '8px 16px', background: '#0a0f1e', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'center' }}>
+              <button 
+                onClick={() => window.open(activeSite.githubUrl, '_blank')}
+                style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', border: 'none', padding: '6px 16px', borderRadius: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', transition: 'background 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+              >
+                <Code size={15} /> View Source Code on GitHub
+              </button>
+            </div>
+          )}
+        </div>
       );
     }
     return (
       <div style={{ padding: '40px', background: 'radial-gradient(ellipse at 50% 30%, rgba(59,130,246,0.1) 0%, #0a0f1e 70%)', height: '100%', color: '#f8fafc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <h1 style={{ fontSize: '42px', marginBottom: '16px', background: 'linear-gradient(135deg, #60a5fa, #a78bfa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: '700' }}>{activeSite.name}</h1>
         <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '500px', textAlign: 'center', lineHeight: '1.6' }}>{activeSite.description}</p>
+        
+        {activeSite.githubUrl && (
+          <button 
+            onClick={() => window.open(activeSite.githubUrl, '_blank')}
+            style={{ marginTop: '20px', background: 'rgba(255,255,255,0.1)', color: '#fff', border: 'none', padding: '8px 16px', borderRadius: '6px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', transition: 'background 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+          >
+            <Code size={16} /> View on GitHub
+          </button>
+        )}
+
         <div style={{ marginTop: '30px', padding: '12px 20px', background: 'rgba(16,185,129,0.1)', borderRadius: '10px', border: '1px solid rgba(16,185,129,0.2)', color: '#10b981', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px' }}>
           <RotateCw size={16} />
           <span>Currently running locally</span>
